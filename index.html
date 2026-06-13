@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support My Creation</title>
+    <!-- Importing high-engagement modern tech fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Rich midnight palette with a subtle blue/violet depth */
+            --bg-main: #060913;
+            --bg-card: #111827;
+            --border-color: rgba(255, 255, 255, 0.06);
+            --text-heading: #ffffff;
+            --text-body: #9ca3af;
+            --accent-glow: rgba(99, 102, 241, 0.15); /* Soft indigo highlight */
+            --qr-frame-bg: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            /* Radial background gradient to create a premium center spotlight effect */
+            background-image: radial-gradient(circle at top, #141c33 0%, var(--bg-main) 70%);
+            color: var(--text-body);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 840px; /* Widened to perfectly balance two side-by-side cards */
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            max-width: 580px;
+            margin: 0 auto 3rem auto;
+            color: var(--text-body);
+        }
+
+        /* The flex wrapper that manages side-by-side positioning */
+        .qr-grid {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap; /* Ensures it wraps cleanly into a single column on phones */
+            margin-bottom: 3rem;
+        }
+
+        /* Upgraded interactive content card */
+        .qr-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 28px;
+            padding: 36px 24px;
+            flex: 1;
+            min-width: 280px; /* Prevents cards from getting squished too small */
+            max-width: 380px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+            /* Smooth transitions for interactive lift and glow */
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.4s ease, 
+                        box-shadow 0.4s ease;
+        }
+
+        /* Interactive hover state to keep users engaged */
+        .qr-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(99, 102, 241, 0.3);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7), 
+                        0 0 40px 0 var(--accent-glow);
+        }
+
+        .qr-title {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text-heading);
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 0.25rem;
+            font-size: 1.25rem;
+            letter-spacing: -0.01em;
+        }
+
+        .qr-subtitle {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        /* High contrast, ultra-clean containment frame for scanner accuracy */
+        .qr-frame {
+            background-color: var(--qr-frame-bg);
+            padding: 16px;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .qr-frame img {
+            display: block;
+            width: 180px;
+            height: 180px;
+        }
+
+        /* Technical monospace layout for perfect character rendering */
+        .address-box {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            background-color: rgba(0, 0, 0, 0.25);
+            padding: 14px;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            color: var(--text-heading);
+            word-break: break-all;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            letter-spacing: -0.01em;
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Engaging Top Header Area -->
+        <h1>Fuel the Innovation</h1>
+        <p class="subtitle">Placeholder text: Insert a compelling hook here detailing what your project is, why it matters, and how these community contributions directly keep development alive.</p>
+
+        <!-- Twin Column Layout Grid -->
+        <div class="qr-grid">
+            
+            <!-- Left QR Card Instance -->
+            <div class="qr-card">
+                <div class="qr-title">EVM Network</div>
+                <div class="qr-subtitle">Supports Base, Polygon, Arbitrum, Ethereum</div>
+                <div class="qr-frame">
+                    <!-- Replace with your generated primary QR image asset -->
+                    <img src="your-first-qr.png" alt="Scan to tip via EVM">
+                </div>
+                <div class="address-box">0xYourPrimaryEVMWalletAddressGoesRightHere</div>
+            </div>
+
+            <!-- Right QR Card Instance -->
+            <div class="qr-card">
+                <div class="qr-title">Solana Network</div>
+                <div class="qr-subtitle">Supports Direct SOL & SPL Token Transfers</div>
+                <div class="qr-frame">
+                    <!-- Replace with your generated secondary QR image asset -->
+                    <img src="your-second-qr.png" alt="Scan to tip via Solana">
+                </div>
+                <div class="address-box">YourSolanaNetworkPublicWalletAddressGoesRightHere</div>
+            </div>
+
+        </div>
+
+        <!-- Closing Context Area -->
+        <p class="footer-text">Filler text: Provide a clear structural reminder down here regarding transaction mechanics, network safety steps, or a simple message of appreciation for their time.</p>
+    </div>
+
+</body>
+</html>
