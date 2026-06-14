@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capitalism has me down bad</title>
+    <title>what has my life come to</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,19 +11,17 @@
     
     <style>
         :root {
-            /* Rich midnight palette with a subtle blue/violet depth */
             --bg-main: #060913;
             --bg-card: #111827;
             --border-color: rgba(255, 255, 255, 0.06);
             --text-heading: #ffffff;
             --text-body: #9ca3af;
-            --accent-glow: rgba(99, 102, 241, 0.15); /* Soft indigo highlight */
+            --accent-glow: rgba(99, 102, 241, 0.15);
             --qr-frame-bg: #ffffff;
         }
 
         body {
             background-color: var(--bg-main);
-            /* Radial background gradient to create a premium center spotlight effect */
             background-image: radial-gradient(circle at top, #141c33 0%, var(--bg-main) 70%);
             color: var(--text-body);
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -38,7 +36,7 @@
         }
 
         .container {
-            max-width: 840px; /* Widened to perfectly balance two side-by-side cards */
+            max-width: 840px;
             width: 100%;
             text-align: center;
         }
@@ -59,33 +57,29 @@
             color: var(--text-body);
         }
 
-        /* The flex wrapper that manages side-by-side positioning */
         .qr-grid {
             display: flex;
             gap: 24px;
             justify-content: center;
-            flex-wrap: wrap; /* Ensures it wraps cleanly into a single column on phones */
+            flex-wrap: wrap;
             margin-bottom: 3rem;
         }
 
-        /* Upgraded interactive content card */
         .qr-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 28px;
             padding: 36px 24px;
             flex: 1;
-            min-width: 280px; /* Prevents cards from getting squished too small */
+            min-width: 280px;
             max-width: 380px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             box-sizing: border-box;
-            /* Smooth transitions for interactive lift and glow */
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
                         border-color 0.4s ease, 
                         box-shadow 0.4s ease;
         }
 
-        /* Interactive hover state */
         .qr-card:hover {
             transform: translateY(-6px);
             border-color: rgba(99, 102, 241, 0.3);
@@ -110,7 +104,6 @@
             font-weight: 500;
         }
 
-        /* High contrast, ultra-clean containment frame for scanner accuracy */
         .qr-frame {
             background-color: var(--qr-frame-bg);
             padding: 16px;
@@ -125,18 +118,52 @@
             height: 180px;
         }
 
-        /* Technical monospace layout for perfect character rendering */
+        /* UPGRADED: Flexbox layout to align text and button */
         .address-box {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
             background-color: rgba(0, 0, 0, 0.25);
-            padding: 14px;
+            padding: 12px 14px;
             border-radius: 12px;
             margin-top: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .address-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
             color: var(--text-heading);
             word-break: break-all;
-            border: 1px solid rgba(255, 255, 255, 0.03);
             letter-spacing: -0.01em;
+            text-align: left;
+        }
+
+        /* NEW: Styling for the copy button */
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-body);
+            border-radius: 8px;
+            padding: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            flex-shrink: 0; /* Prevents button from shrinking on small screens */
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--text-heading);
+        }
+
+        .copy-btn.copied {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: rgba(16, 185, 129, 0.5);
+            color: #10b981; /* Emerald green */
         }
 
         .footer-text {
@@ -152,9 +179,8 @@
     <div class="container">
 
         <h1>Can you spare a buck?</h1>
-        <p class="subtitle">My last ditch effort at becoming rich T-T</p>
+        <p class="subtitle">Inflation hit my dreams too</p>
 
-        <!-- Twin Column Layout Grid -->
         <div class="qr-grid">
             
             <!-- Left QR Card Instance -->
@@ -162,10 +188,18 @@
                 <div class="qr-title">EVM Network</div>
                 <div class="qr-subtitle"></div>
                 <div class="qr-frame">
-
                     <img src="ethereum.png" alt="Scan to tip via EVM">
                 </div>
-                <div class="address-box">0x79f9D866853C1118978B4e87B79bc361a802Ba19</div>
+                <!-- Address Box with Button -->
+                <div class="address-box">
+                    <span class="address-text">0x79f9D866853C1118978B4e87B79bc361a802Ba19</span>
+                    <button class="copy-btn" onclick="copyAddress(this, '0x79f9D866853C1118978B4e87B79bc361a802Ba19')" title="Copy Address">
+                        <!-- Copy Icon SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                    </button>
+                </div>
             </div>
 
             <!-- Right QR Card Instance -->
@@ -173,17 +207,51 @@
                 <div class="qr-title">Bitcoin</div>
                 <div class="qr-subtitle"></div>
                 <div class="qr-frame">
-
                     <img src="bitcoin.png" alt="Scan to tip via Bitcoin">
                 </div>
-                <div class="address-box">bc1q25fpch3dqyvaz7vnswtprlx0tyvd9qdm264hg9</div>
+                <!--Address Box with Button -->
+                <div class="address-box">
+                    <span class="address-text">bc1q25fpch3dqyvaz7vnswtprlx0tyvd9qdm264hg9</span>
+                    <button class="copy-btn" onclick="copyAddress(this, 'bc1q25fpch3dqyvaz7vnswtprlx0tyvd9qdm264hg9')" title="Copy Address">
+                        <!-- Copy Icon SVG -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                    </button>
+                </div>
             </div>
 
         </div>
 
-
         <p class="footer-text">This is not a malicious site, the qr is a crypto adress. If you donated, a big hug and lots of love from me >_<. If you didn't, that's sad, but i understand. Thank you anyways.</p>
     </div>
 
+    <!--JavaScript to handle the copy functionality -->
+    <script>
+        function copyAddress(buttonElement, address) {
+            navigator.clipboard.writeText(address).then(() => {
+                // Keep the original copy icon SVG to revert back later
+                const originalIcon = buttonElement.innerHTML;
+                
+                // Swap to a checkmark SVG
+                buttonElement.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                `;
+                
+                // Add the 'copied' class for green styling
+                buttonElement.classList.add('copied');
+
+                // Revert back after 2 seconds
+                setTimeout(() => {
+                    buttonElement.innerHTML = originalIcon;
+                    buttonElement.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+    </script>
 </body>
 </html>
